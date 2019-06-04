@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    1810api
+                    {{env('APP_URL')}}
                 </div>
 
                 <div class="links">
