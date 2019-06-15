@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('curl','Api\OneController@curl');
+Route::get('curlone','Api\OneController@curlone');
+Route::get('menu','Api\OneController@menu');
+Route::get('mi','Api\OneController@mi');
+Route::get('Symmetric','Api\OneController@Symmetric');
+Route::get('FSymmetric','Api\OneController@FSymmetric');
+Route::get('payGo','Api\PayController@payGo');
