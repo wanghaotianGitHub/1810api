@@ -18,6 +18,9 @@ Route::get('curl','Api\OneController@curl');
 Route::get('curlone','Api\OneController@curlone');
 Route::get('menu','Api\OneController@menu');
 Route::get('mi','Api\OneController@mi');
-Route::get('Symmetric','Api\OneController@Symmetric');
-Route::get('FSymmetric','Api\OneController@FSymmetric');
-Route::get('payGo','Api\PayController@payGo');
+Route::get('Symmetric','Api\OneController@Symmetric');    //对称加密
+Route::get('FSymmetric','Api\OneController@FSymmetric');  //非对称加密
+Route::get('payGo','Api\PayController@payGo');            //支付宝支付
+
+Route::post('reg','Api\OneController@reg');
+Route::post('login','Api\OneController@login');

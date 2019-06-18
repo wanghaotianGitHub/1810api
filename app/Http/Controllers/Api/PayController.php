@@ -16,7 +16,7 @@ class PayController extends Controller
         $ali_gateway = 'https://openapi.alipaydev.com/gateway.do';
         //请求参数;
         $biz_cont = [
-            'subject'       => '订单'.mt_rand(11111,99999).time(),     
+            'subject'       => '订单'.mt_rand(11111,99999).time(),
             'out_trade_no'  => '1810_'.mt_rand(11111,99999).time(),
             'total_amount'  => mt_rand(1,100) / 100,
             'product_code'  => 'QUICK_WAP_WAY',

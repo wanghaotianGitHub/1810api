@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\DB;
 class OneController extends Controller{
     //curl
     public function curl(){
@@ -88,5 +89,33 @@ class OneController extends Controller{
         $res_str = $response->getBody();
         echo $res_str;
     }
-    
+
+    public function reg(Request $request){
+        $data=$request->input();
+        unset($data['pwds']);
+        $res=DB::table('reg')->insert($data);
+        if($res){
+            echo 1;
+        }else{
+            echo 2;
+        }
+    }
+    public function login(Request $request){
+        $name = $request->input('name');
+        $pwd = $request->input('pwd');
+        $u = DB::table("reg")->where(['name'=>$name])->first();
+        if($u){
+            //验证登录
+            if($u->pwd == $pwd){
+                echo "1";
+            }else{
+                //密码错误
+                echo "2";
+            }
+        }else{
+            //用户不存在
+            echo "3";
+        }
+    }
+
 }
